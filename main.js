@@ -1,0 +1,42 @@
+const quizData = [
+  {
+    question: 'How old is kakashi from naruto?',
+    a: '10',
+    b: '17',
+    c: '29',
+    d: '100',
+    correct: 'c',
+  },
+  {
+    question: 'What is the most used programming language in 2019?',
+    a: 'Java',
+    b: 'C',
+    c: 'Python',
+    d: 'JavaScript',
+    correct: 'a',
+  },
+  {
+    question: 'Who is the President of US?',
+    a: 'Florin Pop',
+    b: 'Thomas Alva Edison',
+    c: 'Ivan Saldano',
+    d: 'Mihai Andrei',
+    correct: 'b',
+  },
+  {
+    question: 'What does HTML stand for?',
+    a: 'Hypertext Markup Language',
+    b: 'Cascading Style Sheet',
+    c: 'Jasn Object Notation',
+    d: 'Application Programming Interface',
+    correct: 'a',
+  },
+  {
+    question: 'What year was JavaScript launched?',
+    a: '2020',
+    b: '2019',
+    c: '2018',
+    d: 'none of the above',
+    correct: 'd',
+  },
+];
