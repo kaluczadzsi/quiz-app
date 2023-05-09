@@ -1,3 +1,5 @@
+'use strict';
+
 const quizData = [
   {
     question: 'How old is kakashi from naruto?',
@@ -41,7 +43,9 @@ const quizData = [
   },
 ];
 
+const answerEls = document.querySelectorAll('.answer');
 const questionEl = document.getElementById('question');
+const quiz = document.getElementById('quiz');
 
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -53,6 +57,7 @@ let currentQuiz = 0;
 let score = 0;
 
 function loadQuiz() {
+  deselectAnswers();
   const currentQuizData = quizData[currentQuiz];
   questionEl.innerText = currentQuizData.question;
 
@@ -65,8 +70,6 @@ function loadQuiz() {
 loadQuiz();
 
 function getSelected() {
-  const answerEls = document.querySelectorAll('.answer');
-
   let answer = undefined;
 
   answerEls.forEach((answerEl) => {
@@ -76,6 +79,12 @@ function getSelected() {
   });
 
   return answer;
+}
+
+function deselectAnswers() {
+  answerEls.forEach((answerEl) => {
+    answerEl.checked = false;
+  });
 }
 
 submitBtn.addEventListener('click', () => {
@@ -89,8 +98,7 @@ submitBtn.addEventListener('click', () => {
     if (currentQuiz < quizData.length) {
       loadQuiz();
     } else {
-      // TODO: Show results
-      alert('You finished!');
+      quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions.</h2>`;
     }
   }
 });
